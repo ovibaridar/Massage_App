@@ -5,11 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="CodeHim" name="author">
-    <title> Direct Messaging Example </title>
+    <title> Direct Messaging</title>
     <!-- Style CSS -->
-    <link href="./css/style.css" rel="stylesheet">
+    {% load static%}
+
+    <link href="{% static 'chat_app/css/style.css' %}" rel="stylesheet">
     <!-- Demo CSS (No need to include it into your project) -->
-    <link href="./css/demo.css" rel="stylesheet">
+    <link href="{% static 'chat_app/css/demo.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
 </head>
@@ -200,7 +202,8 @@
     <!-- END EDMO HTML (Happy Coding!)-->
 </main>
 <!-- Script JS -->
-<script src="./js/script.js"></script>
+<script src="{% static 'chat_app/js/script.js' %}"></script>
+
 <!--$%analytics%$-->
 </body>
 

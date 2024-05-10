@@ -3,208 +3,134 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="CodeHim" name="author">
-    <title> Direct Messaging</title>
-    <!-- Style CSS -->
-    {% load static%}
 
-    <link href="{% static 'chat_app/css/style.css' %}" rel="stylesheet">
-    <!-- Demo CSS (No need to include it into your project) -->
-    <link href="{% static 'chat_app/css/demo.css' %}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+
+    <title>chat app - Bootdey.com</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {%include 'chat_app/style.html'%}
 </head>
 
 <body>
-<!--$%adsense%$-->
-<main class="cd__main">
-    <!-- Start DEMO HTML (Use the following code into your project)-->
-    <div class="wrapper">
-        <div class="container">
-            <div class="left">
-                <div class="top">
-                    <input placeholder="Search" type="text"/>
-                    <a class="search" href="javascript:;"></a>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+                <div class="people-list" id="plist">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-search"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Search..." type="text">
+                    </div>
+                    <ul class="list-unstyled chat-list mt-2 mb-0">
+                        <li class="clearfix">
+                            <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                            <div class="about">
+                                <div class="name">Vincent Porter</div>
+                                <div class="status"><i class="fa fa-circle offline"></i> left 7 mins ago</div>
+                            </div>
+                        </li>
+                        <li class="clearfix active">
+                            <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                            <div class="about">
+                                <div class="name">Aiden Chavez</div>
+                                <div class="status"><i class="fa fa-circle online"></i> online</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                            <div class="about">
+                                <div class="name">Mike Thomas</div>
+                                <div class="status"><i class="fa fa-circle online"></i> online</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                            <div class="about">
+                                <div class="name">Christian Kelly</div>
+                                <div class="status"><i class="fa fa-circle offline"></i> left 10 hours ago</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar8.png">
+                            <div class="about">
+                                <div class="name">Monica Ward</div>
+                                <div class="status"><i class="fa fa-circle online"></i> online</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                            <div class="about">
+                                <div class="name">Dean Henry</div>
+                                <div class="status"><i class="fa fa-circle offline"></i> offline since Oct 28
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="people">
-                    <li class="person" data-chat="person1">
-                        <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/thomas.jpg"/>
-                        <span class="name">Thomas Bangalter</span>
-                        <span class="time">2:09 PM</span>
-                        <span class="preview">I was wondering...</span>
-                    </li>
-                    <li class="person" data-chat="person2">
-                        <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/dog.png"/>
-                        <span class="name">Dog Woofson</span>
-                        <span class="time">1:44 PM</span>
-                        <span class="preview">I've forgotten how it felt before</span>
-                    </li>
-                    <li class="person" data-chat="person3">
-                        <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/louis-ck.jpeg"/>
-                        <span class="name">Louis CK</span>
-                        <span class="time">2:09 PM</span>
-                        <span class="preview">But we’re probably gonna need a new carpet.</span>
-                    </li>
-                    <li class="person" data-chat="person4">
-                        <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/bo-jackson.jpg"/>
-                        <span class="name">Bo Jackson</span>
-                        <span class="time">2:09 PM</span>
-                        <span class="preview">It’s not that bad...</span>
-                    </li>
-                    <li class="person" data-chat="person5">
-                        <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/michael-jordan.jpg"/>
-                        <span class="name">Michael Jordan</span>
-                        <span class="time">2:09 PM</span>
-                        <span class="preview">Wasup for the third time like is
-                                you blind bitch</span>
-                    </li>
-                    <li class="person" data-chat="person6">
-                        <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/drake.jpg"/>
-                        <span class="name">Drake</span>
-                        <span class="time">2:09 PM</span>
-                        <span class="preview">howdoyoudoaspace</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="right">
-                <div class="top"><span>To: <span class="name">Dog Woofson</span></span></div>
-                <div class="chat" data-chat="person1">
-                    <div class="conversation-start">
-                        <span>Today, 6:48 AM</span>
-                    </div>
-                    <div class="bubble you">
-                        Hello,
-                    </div>
-                    <div class="bubble you">
-                        it's me.
-                    </div>
-                    <div class="bubble you">
-                        I was wondering...
-                    </div>
-                </div>
-                <div class="chat" data-chat="person2">
-                    <div class="conversation-start">
-                        <span>Today, 5:38 PM</span>
-                    </div>
-                    <div class="bubble you">
-                        Hello, can you hear me?
-                    </div>
-                    <div class="bubble you">
-                        I'm in California dreaming
-                    </div>
-                    <div class="bubble me">
-                        ... about who we used to be.
-                    </div>
-                    <div class="bubble me">
-                        Are you serious?
-                    </div>
-                    <div class="bubble you">
-                        When we were younger and free...
-                    </div>
-                    <div class="bubble you">
-                        I've forgotten how it felt before
-                    </div>
-                </div>
-                <div class="chat" data-chat="person3">
-                    <div class="conversation-start">
-                        <span>Today, 3:38 AM</span>
-                    </div>
-                    <div class="bubble you">
-                        Hey human!
-                    </div>
-                    <div class="bubble you">
-                        Umm... Someone took a shit in the hallway.
-                    </div>
-                    <div class="bubble me">
-                        ... what.
-                    </div>
-                    <div class="bubble me">
-                        Are you serious?
-                    </div>
-                    <div class="bubble you">
-                        I mean...
-                    </div>
-                    <div class="bubble you">
-                        It’s not that bad...
-                    </div>
-                    <div class="bubble you">
-                        But we’re probably gonna need a new carpet.
-                    </div>
-                </div>
-                <div class="chat" data-chat="person4">
-                    <div class="conversation-start">
-                        <span>Yesterday, 4:20 PM</span>
-                    </div>
-                    <div class="bubble me">
-                        Hey human!
-                    </div>
-                    <div class="bubble me">
-                        Umm... Someone took a shit in the hallway.
-                    </div>
-                    <div class="bubble you">
-                        ... what.
-                    </div>
-                    <div class="bubble you">
-                        Are you serious?
-                    </div>
-                    <div class="bubble me">
-                        I mean...
-                    </div>
-                    <div class="bubble me">
-                        It’s not that bad...
-                    </div>
-                </div>
-                <div class="chat" data-chat="person5">
-                    <div class="conversation-start">
-                        <span>Today, 6:28 AM</span>
-                    </div>
-                    <div class="bubble you">
-                        Wasup
-                    </div>
-                    <div class="bubble you">
-                        Wasup
-                    </div>
-                    <div class="bubble you">
-                        Wasup for the third time like is <br/>you blind bitch
-                    </div>
+                <div class="chat">
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a data-target="#view_info" data-toggle="modal" href="javascript:void(0);">
+                                    <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">Aiden Chavez</h6>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                    <div class="chat-history">
+                        <ul class="m-b-0">
+                            <li class="clearfix">
+                                <div class="message-data text-right">
+                                    <span class="message-data-time">10:10 AM, Today</span>
+                                    <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                </div>
+                                <div class="message other-message float-right"> Hi Aiden, how are you? How is the
+                                    project coming along?
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data">
+                                    <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                    <span class="message-data-time">10:12 AM, Today</span>
+                                </div>
+                                <div class="message my-message">Are we meeting today?</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="message-data">
+                                    <img alt="avatar" src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                    <span class="message-data-time">10:15 AM, Today</span>
+                                </div>
+                                <div class="message my-message">Project has been already finished and I have results
+                                    to show you.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-send"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Enter text here..." type="text">
+                        </div>
+                    </div>
                 </div>
-                <div class="chat" data-chat="person6">
-                    <div class="conversation-start">
-                        <span>Monday, 1:27 PM</span>
-                    </div>
-                    <div class="bubble you">
-                        So, how's your new phone?
-                    </div>
-                    <div class="bubble you">
-                        You finally have a smartphone :D
-                    </div>
-                    <div class="bubble me">
-                        Drake?
-                    </div>
-                    <div class="bubble me">
-                        Why aren't you answering?
-                    </div>
-                    <div class="bubble you">
-                        howdoyoudoaspace
-                    </div>
-                </div>
-                <div class="write">
-                    <a class="write-link attach" href="javascript:;"></a>
-                    <input type="text"/>
-                    <a class="write-link smiley" href="javascript:;"></a>
-                    <a class="write-link send" href="javascript:;"></a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- END EDMO HTML (Happy Coding!)-->
-</main>
-<!-- Script JS -->
-<script src="{% static 'chat_app/js/script.js' %}"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
 
-<!--$%analytics%$-->
+</script>
 </body>
 
 </html>
